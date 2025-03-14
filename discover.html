@@ -24,7 +24,7 @@
         </nav>
     </header>
     <main class="bg-slate-200">
-        <h1 class="flex justify-center font-bold text-lg m-2">Blogs</h1>
+        <h1 class="flex justify-center font-bold text-xl m-2 pt-5">Blogs</h1>
         <section class="flex justify-center">
             <div class="m-3 bg-base-100 w-4/5 flex  rounded-lg">
                 <div class="">
@@ -34,56 +34,61 @@
                                 <div class="card-body">
                                   <h2 class="card-title">Question-1: What are the different ways to select an element in the DOM?</h2>
                                   <h2 class="font-semibold text-lg">ANSWER: </h2>
-                                  <p>There are 5 ways to select an element in the DOM: 
-                                    <ul>
-                                        <li>selectallfromquerry</li>
-                                        <li>getElemnetByID</li>
-                                        <li>getElemnetsByTagName</li>
-                                        <li>getElemnetByClassName</li>
-                                        <li>selectquerry</li>
-                                    </ul>
+                                  <p>getElementById(id): Selects by ID. <br>
+                                    getElementsByClassName(class): Selects by class name. <br>
+                                    querySelector(selector): Selects the first matching element using CSS selectors. <br>
+                                    querySelectorAll(selector): Selects all matching elements using CSS selectors.
                                   </p>
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div>
                             <div class="card bg-base-100 w-4/5">
                                 <div class="card-body">
                                   <h2 class="card-title">Question-2: What is the difference between innerHTML, innerText, and textContent ?</h2>
                                   <h2 class="font-semibold text-lg">ANSWER: </h2>
-                                  <p>innerHTML: sets the HTML content inside an element <br>innerText: sets the visible text inside an element <br> textContent: sets all text inside an element, including hidden text <br> So the main difference between them are: </p>
-                                  <p>
-                                    innerHTML can parses HTML with Hidden Text innerText can Just only reads the visible Text On the other hand, textContent can show the hiddenText
-                                  </p>
+                                  <ul>
+                                    <li>innerHTML: Retrieves or sets HTML content, including tags.</li>
+                                    <li>innerText: Retrieves or sets visible text, excluding hidden text.</li>
+                                    <li>textContent: Retrieves or sets raw text, including text in hidden elements.</li>
+                                  </ul>  
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div>
                             <div class="card bg-base-100 w-4/5">
                                 <div class="card-body">
                                   <h2 class="card-title">Question-3: What is event delegation in the DOM?</h2>
                                   <h2 class="font-semibold text-lg">ANSWER: </h2>
-                                  <p>Event Delegation is an approach in JavaScript where a single event handler is bound to the parent instead of multiple child elements.</p>
+                                  <p>Event delegation involves attaching a single event listener to a parent element to handle events for multiple child elements, improving performance and handling dynamic content.</p>
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div>
                             <div class="card bg-base-100 w-4/5">
                                 <div class="card-body">
                                   <h2 class="card-title">Question-4: What is event bubbling in the DOM?</h2>
                                   <h2 class="font-semibold text-lg">ANSWER: </h2>
-                                  <p>Event bubbling is a DOM phenomenon in which an event starts from the target element and travels up its ancestors to the root.</p>
+                                  <p>Event bubbling refers to an event starting from the target element and propagating up to its ancestors, triggering event listeners at each level. It can be stopped using event.stopPropagation().</p>
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div>
                             <div class="card bg-base-100 w-4/5">
                                 <div class="card-body">
                                   <h2 class="card-title">Question-5: How do you create, add, and remove elements using JavaScript?</h2>
                                   <h2 class="font-semibold text-lg">ANSWER: </h2>
-                                  <p>Create element: document.createElement("tag") <br>
-                                    Add element: document.body.appendChild("") <br>
-                                    Remove element: variable_name.remove()</p>
+                                  <p>let newElement = document.createElement('p');
+                                    newElement.textContent = 'This is a new paragraph!';
+                                    
+                                    let parentElement = document.getElementById('parent');
+                                    parentElement.appendChild(newElement);
+                                    
+                                    newElement.parentNode.removeChild(newElement);</p>
                                 </div>
                             </div>
                         </div>

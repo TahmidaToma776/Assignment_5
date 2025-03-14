@@ -4,6 +4,14 @@ function disableButtonById(buttonId) {
         button.disabled = true;
     }
 }
+function updateDateTime() {
+    let now = new Date();
+    let date = now.toLocaleDateString();
+    let dateOptions = { weekday: 'short', day: '2-digit', month: 'long' };
+    let formattedDate = now.toLocaleDateString('en-GB', dateOptions);
+    document.getElementById("dateTime").innerText = `${formattedDate}`;
+}
+updateDateTime();
 function updateSidebar(event) {
     let taskId = event.target.getAttribute("data-task");
     let taskName = document.getElementById(taskId).innerText;
@@ -19,25 +27,17 @@ function updateSidebar(event) {
     sidebarContent.appendChild(newEntry);
 }
 
-function clearHistory() {
+function deleteHistory() {
     let sidebarContent = document.getElementById("sidebar");
     sidebarContent.innerHTML = "";
 }
 
-function updateDateTime() {
-    let now = new Date();
-    let date = now.toLocaleDateString();
-    let dateOptions = { weekday: 'short', day: '2-digit', month: 'long' };
-    let formattedDate = now.toLocaleDateString('en-GB', dateOptions);
-    document.getElementById("dateTime").innerText = `${formattedDate}`;
-}
-updateDateTime();
-
-function showAlert() {
+function displayAlert() {
     alert("Well Done!, You Completed your Task");
 }
-
-
+function lastAlert(){
+    alert("Congratulations!! You did your all Task");
+}
 
 document.querySelectorAll(".taskButton").forEach(button => {
     button.addEventListener("click", updateSidebar);
@@ -58,7 +58,7 @@ document.getElementById('disable-btn-1').addEventListener('click', function(){
     count.innerText = finalCount + 1;
 })
 document.getElementById("disable-btn-1").addEventListener("click", updateSidebar);
-document.getElementById("disable-btn-1").addEventListener("click", showAlert);
+document.getElementById("disable-btn-1").addEventListener("click", displayAlert);
 
 
 document.getElementById('disable-btn-2').addEventListener('click', function(event){
@@ -76,7 +76,7 @@ document.getElementById('disable-btn-2').addEventListener('click', function(){
     count.innerText = finalCount + 1;
 })
 document.getElementById("disable-btn-2").addEventListener("click", updateSidebar);
-document.getElementById("disable-btn-2").addEventListener("click", showAlert);
+document.getElementById("disable-btn-2").addEventListener("click", displayAlert);
 
 document.getElementById('disable-btn-3').addEventListener('click', function(event){
     event.preventDefault();
@@ -93,7 +93,7 @@ document.getElementById('disable-btn-3').addEventListener('click', function(){
     count.innerText = finalCount + 1;
 })
 document.getElementById("disable-btn-3").addEventListener("click", updateSidebar);
-document.getElementById("disable-btn-3").addEventListener("click", showAlert);
+document.getElementById("disable-btn-3").addEventListener("click", displayAlert);
 
 document.getElementById('disable-btn-4').addEventListener('click', function(event){
     event.preventDefault();
@@ -110,7 +110,7 @@ document.getElementById('disable-btn-4').addEventListener('click', function(){
     count.innerText = finalCount + 1;
 })
 document.getElementById("disable-btn-4").addEventListener("click", updateSidebar);
-document.getElementById("disable-btn-4").addEventListener("click", showAlert);
+document.getElementById("disable-btn-4").addEventListener("click", displayAlert);
 
 document.getElementById('disable-btn-5').addEventListener('click', function(event){
     event.preventDefault();
@@ -127,7 +127,7 @@ document.getElementById('disable-btn-5').addEventListener('click', function(){
     count.innerText = finalCount + 1;
 })
 document.getElementById("disable-btn-5").addEventListener("click", updateSidebar);
-document.getElementById("disable-btn-5").addEventListener("click", showAlert);
+document.getElementById("disable-btn-5").addEventListener("click", displayAlert);
 
 document.getElementById('disable-btn-6').addEventListener('click', function(event){
     event.preventDefault();
@@ -144,7 +144,8 @@ document.getElementById('disable-btn-6').addEventListener('click', function(){
     count.innerText = finalCount + 1;
 })
 document.getElementById("disable-btn-6").addEventListener("click", updateSidebar);
-document.getElementById("disable-btn-6").addEventListener("click", showAlert);
+document.getElementById("disable-btn-6").addEventListener("click", displayAlert);
+document.getElementById('disable-btn-6').addEventListener('click', lastAlert);
 
 
-document.getElementById("clearHistory").addEventListener("click", clearHistory);
+document.getElementById("clearHistory").addEventListener("click", deleteHistory);
