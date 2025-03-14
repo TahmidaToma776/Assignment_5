@@ -1,11 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dev Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+<body class="">
+    <header>
+        <nav class="flex justify-center">
+            <div class="navbar m-3 bg-base-100 w-4/5 rounded-lg flex justify-between">
+                <div class="">
+                    <img class="" src="assets/logo.png" alt="">
+                    <div class="flex-1">
+                        <a class="text-xl">Dev <span class="font-bold">Board</span></a>
+                    </div>
+                </div>
+                <div class="flex justify-end gap-2">
+                        <div class="flex justify-center gap-2 bg-slate-100 p-3 rounded-3xl">
+                            <img src="assets/checkbox.png" alt="">
+                            <p id="completed" class="text-2xl font-bold">23</p>
+                        </div>
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <button id="theme-btn"><img alt="" src="assets/theme-btn.png"/></button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </nav>
+    </header>
+    <main class="w-4/5 flex justify-around m-auto">
+        <section class="bg-slate-100 rounded-xl">
+            <section class="grid grid-cols-3 m-5">
+                <div class="card card-compact bg-base-100 w-60 mb-3">
+                    <div class="flex justify-start">
+                        <img class="size-12 p-2 m-5" src="assets/checkbox.png" alt="logo"/>
+                        <div>
+                            <h3 class="card-title pt-5 text-sm">Task Assigned</h3>
+                            <h1 id="task" class="text-3xl font-bold">6</h1>
+                        </div>
+                    </div>    
+                </div>
+                <div class="card card-compact bg-gradient-to-r from-indigo-700 to-blue-300 mb-3 w-96">
+                    <button id="discover-btn">
+                        <div class="flex justify-start">
+                            <img class="size-16 p-2 m-5" src="assets/board.png" alt="logo"/>
+                            <div>
+                                <h3 class="card-title pt-5 text-white text-xl">Discover Something <br> New Today!</h3>
+                            </div>
+                        </div> 
+                    </button>
+                </div>
+                <div class="card card-compact bg-base-100 mb-3 ml-24 w-52">
+                    <div class="flex justify-start">
+                        <img class="size-12 p-2 m-5" src="assets/calender.png" alt="logo"/>
+                        <div>
+                            <h3 id="dateTime" class="card-title pt-5 font-bold text-wrap text-xl"></h3>
+                        </div>
+                    </div>    
+                </div>
+            </section>
+            <hr>
+            <br>
+            <section class="grid grid-cols-3">
+                <div class="card ml-5 card-compact bg-slate-200 w-72 mb-3">
+                    <div class="card-body">
+                        <div class="card card-compact ml-3 pl-1 bg-white w-24">
+                          <div class="flex justify-start">
+                                <div>
+                                  <h3 class="card-title p-3 text-black text-sm">ShopEase</h3>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="task1" class="card-title">Fix Mobile Button Issue </h2>
+                        <div class="card card-compact bg-white w-68 flex justify-start">
+                            <div>
+                                <h3 class="card-title p-3 text-black text-sm">Discover Something New Today! What about you, I am doing my code here</h3>
+                            </div>
+                        </div> 
+                        <div class="card-actions flex justify-between">
+                            <div class="">
+                                <h4>Deadline</h4>
+                                <h4 class="font-bold">21st December</h4>
+                            </div>
+                            <button id="disable-btn-1" class="btn btn-primary taskButton" data-task="task1">Completed</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card ml-5 card-compact bg-slate-200 mb-3 w-72">
+                    <div class="card-body">
+                        <div class="card card-compact ml-3 pl-1 bg-white w-24">
+                          <div class="flex justify-start">
+                                <div>
+                                  <h3 class="card-title p-3 text-black text-sm">CloudSync</h3>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="task2" class="card-title">Add Dark Mode</h2>
+                        <div class="card card-compact bg-white w-68 flex justify-start">
+                            <div>
+                                <h3 class="card-title p-3 text-black text-sm">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</h3>
+                            </div>
+                        </div> 
+                        <div class="card-actions flex justify-between">
+                            <div class="">
+                                <h4>Deadline</h4>
+                                <h4 class="font-bold">21st December</h4>
+                            </div>
+                            <button id="disable-btn-2" class="btn btn-primary taskButton" data-task="task2">Completed</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card ml-5 card-compact bg-slate-200 mb-3 w-72 mr-3">
+                    <div class="card-body">
+                        <div class="card card-compact ml-3 pl-1 bg-white w-24">
+                          <div class="flex justify-start">
+                                <div>
+                                  <h3 class="card-title p-3 text-black text-sm">SwiftPay</h3>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="task3" class="card-title">Optimize  Home page  </h2>
+                        <div class="card card-compact bg-white w-68 flex justify-start">
+                            <div>
+                                <h3 class="card-title p-3 text-black text-sm">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                                </h3>
+                            </div>
+                        </div> 
+                        <div class="card-actions flex justify-between">
+                            <div class="">
+                                <h4>Deadline</h4>
+                                <h4 class="font-bold">21st December</h4>
+                            </div>
+                            <button id="disable-btn-3" class="btn btn-primary taskButton" data-task="task3">Completed</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="grid grid-cols-3 ">
+                <div class="card ml-5 card-compact bg-slate-200 mb-3 w-72">
+                    <div class="card-body">
+                        <div class="card card-compact ml-3 pl-1 bg-white w-24">
+                          <div class="flex justify-start">
+                                <div>
+                                  <h3 class="card-title p-3 text-black text-sm">Meta</h3>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="task4" class="card-title">Add new emoji 🤲</h2>
+                        <div class="card card-compact bg-white w-68 flex justify-start">
+                            <div>
+                                <h3 class="card-title p-3 text-black text-sm">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                                </h3>
+                            </div>
+                        </div> 
+                        <div class="card-actions flex justify-between">
+                            <div class="">
+                                <h4>Deadline</h4>
+                                <h4 class="font-bold">21st December</h4>
+                            </div>
+                            <button id="disable-btn-4" class="btn btn-primary taskButton" data-task="task4">Completed</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card ml-5 card-compact bg-slate-200 mb-3 w-72">
+                    <div class="card-body">
+                        <div class="card card-compact ml-3 pl-1 bg-white w-28">
+                          <div class="flex justify-start">
+                                <div>
+                                  <h3 class="card-title p-3 text-black text-sm">Google LLC</h3>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="task5" class="card-title">Integrate OpenAI API </h2>
+                        <div class="card card-compact bg-white w-68 flex justify-start">
+                            <div>
+                                <h3 class="card-title p-3 text-black text-sm">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                                </h3>
+                            </div>
+                        </div> 
+                        <div class="card-actions flex justify-between">
+                            <div class="">
+                                <h4>Deadline</h4>
+                                <h4 class="font-bold">21st December</h4>
+                            </div>
+                            <button id="disable-btn-5" class="btn btn-primary taskButton" data-task="task5">Completed</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card ml-5 card-compact bg-slate-200 mb-3 w-72 mr-3">
+                    <div class="card-body">
+                        <div class="card card-compact ml-3 pl-1 bg-white w-24">
+                          <div class="flex justify-start">
+                                <div>
+                                  <h3 class="card-title p-3 text-black text-sm">Glassdoar</h3>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="task6" class="card-title">Improve Job searching </h2>
+                        <div class="card card-compact bg-white w-68 flex justify-start">
+                            <div>
+                                <h3 class="card-title p-3 text-black text-sm">Discover Something New Today! What about you, I am doing my code here</h3>
+                            </div>
+                        </div> 
+                        <div class="card-actions flex justify-between">
+                            <div class="">
+                                <h4>Deadline</h4>
+                                <h4 class="font-bold">21st December</h4>
+                            </div>
+                            <button id="disable-btn-6" class="btn btn-primary taskButton" data-task="task6">Completed</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="ml-3">
+            <div id="sidebar-container" class="bg-slate-200 p-6 gap-7 w-64 rounded-lg min-h-screen">
+                <div class="mb-7">
+                    <div class="text-wrap font-medium flex justify-center mb-5">
+                        <img class="h-7" src="assets/activity.png" alt="">
+                        <h2 class="text-2xl font-bold">Activity Log</h2>
+                    </div>
+                    <button id="clearHistory" class="btn primary-btn bg-blue-500 ml-10">Clear History</button>
+                </div>
+                <hr>
+                <div id="sidebar">
+                    <p></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="Script/discover.js"></script>
+    <script src="Script/disable.js"></script>
+    <script src="Script/theme.js"></script>
 </body>
 </html>
